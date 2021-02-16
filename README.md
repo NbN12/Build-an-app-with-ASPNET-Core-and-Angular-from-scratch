@@ -7,6 +7,7 @@
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   - [Run](#run)
+  - [Tips](#tips)
 
 ## General info
 > A practical example of how to build an application with ASP.NET Core API (.Net 5.0) and Angular 10 from start to finish
@@ -39,3 +40,32 @@ dotnet run
 cd client/
 ng serve
 ```
+
+## Tips
+* If you encounter line below while running **ng serve**  
+   <span style="color:red">
+   An unhandled exception occurred: cannot find module '@angular-devkit/build-angular/package.json'
+   </span>   
+   please check your **ng cli** by typing this command.
+   ```bash
+   ng version
+   ```
+   **Result**
+   ```bash
+   Package                         Version
+   ---------------------------------------------------------
+   @angular-devkit/architect       0.1002.0 (cli-only)
+   @angular-devkit/build-angular   <error>              (show no package here)
+   @angular-devkit/core            10.2.0 (cli-only)
+   @angular-devkit/schematics      10.2.0 (cli-only)
+   @angular/cli                    10.2.0 (cli-only)
+   @schematics/angular             10.2.0 (cli-only)
+   @schematics/update              0.1002.0 (cli-only)
+   rxjs                            6.6.2 (cli-only)
+   typescript                      <error>              (show no package here)
+   ```
+   Then run this command to install **@angular-devkit/build-angular** and **typescript**
+   ```bash
+   npm i --save-dev @angular-devkit/build-angular
+   npm i --save-dev typescript
+   ```
