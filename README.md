@@ -43,9 +43,9 @@ ng serve
 
 ## Tips
 * If you encounter line below while running **ng serve**  
-   <span style="color:red">
+   ```bash
    An unhandled exception occurred: cannot find module '@angular-devkit/build-angular/package.json'
-   </span>   
+   ```   
    please check your **ng cli** by typing this command.
    ```bash
    ng version
